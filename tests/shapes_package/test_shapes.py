@@ -19,8 +19,6 @@ class CircleTests(TestCase):
         self.assertEqual(mock_circle.area(), expected_area)
 #assert equal is a built in method in unittest library, 1 of 15 built in to compare 2 things, b/c it's a test
 #mock_circle.area() & expected_area --> 2 parameters being compared by the assertEqual method
-#self --> function
-#self is a keyword: means "this" sorta like itself?????????
 
     def test_circle_area_raises_value_error_with_negative_radius(self):
         """
@@ -78,6 +76,7 @@ class RightTriangleTests(TestCase):
         """
         with self.assertRaises(ValueError):
             mock_right_triangle = RightTriangle(height=-1.0, width=-1.0, hypotenuse=-1.0)
+
 """
     def test_right_triangle_raises_value_error_with_valid_hypotenuse(self):
         
