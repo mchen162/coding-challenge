@@ -79,8 +79,11 @@ class RightTriangleTests(TestCase):
         with self.assertRaises(ValueError):
             mock_right_triangle = RightTriangle(height=-1.0, width=-1.0, hypotenuse=-1.0)
 
-    #def test_right_triangle_raises_value_error_with_valid_hypotenuse(self):
+    def test_right_triangle_raises_value_error_with_valid_hypotenuse(self):
         """
         Tests that Right Triangle object raises value error with greater width or height in relation to hypotenuse
         """
-
+        mock_height, mock_width, mock_hypotenuse = 3., 4., 5.
+        mock_right_triangle = RightTriangle(height=mock_height, width=mock_width, hypotenuse=mock_hypotenuse)
+        self.assertGreater(mock_right_triangle.hypotenuse, mock_right_triangle.height, "Test value is not greater than height")
+        self.assertGreater(mock_right_triangle.hypotenuse, mock_right_triangle.width, "Test value is not greater than width")
